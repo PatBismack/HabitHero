@@ -7,4 +7,59 @@
     android:layout_height="match_parent"
     tools:context=".HabitActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#FBC3AB">
+            <ImageView
+                android:id="@+id/habitBackBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                app:srcCompat="@drawable/back_icon"
+                android:layout_centerVertical="true">
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Habits"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="28sp">
+            </TextView>
+
+        </RelativeLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/habit_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+            <ImageView
+                android:id="@+id/add_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                app:srcCompat="@drawable/add_icon"
+                android:layout_gravity="end|bottom"
+                >
+            </ImageView>
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
