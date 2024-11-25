@@ -9,13 +9,51 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/habitBtn"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#FFE8DE">
+
+        <ImageView
+            android:id="@+id/sun"
             android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:src="@drawable/sun"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="activity_habit">
-        </Button>
+            android:text="Habit Hero"
+            android:textSize="90sp"
+            android:textAlignment="center"
+            android:textColor="#FF7A41"/>
+
+        <Button
+            android:id="@+id/trackBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF7A41"
+            android:text="Track"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/historyBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF7A41"
+            android:text="History"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/focusTimerBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF7A41"
+            android:text="Focus Timer"
+            android:textSize="40sp" />
+
+
     </LinearLayout>
 
 
