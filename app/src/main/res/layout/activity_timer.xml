@@ -7,4 +7,58 @@
     android:layout_height="match_parent"
     tools:context=".TimerActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Focus Sesion"
+        android:textSize="70sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:gravity="center"
+       android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/fTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="70sp"
+        android:layout_marginTop="100dp"
+        android:textAlignment="center"
+        android:textColor="#FF7A41"/>
+
+    <SeekBar
+        android:id="@+id/timerSB"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:max="60"
+        android:min="0"
+        android:thumbTint="#FF7A41"
+        android:progressTint="#FF7A41"
+        android:backgroundTint="#DDDDDD" />
+   </LinearLayout>
+
+       <Button
+           android:id="@+id/startButton"
+           android:layout_width="350dp"
+           android:layout_height="wrap_content"
+           android:text="Start"
+           android:textSize="50sp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginBottom="16dp"
+           android:backgroundTint="#FF7A41"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
