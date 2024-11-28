@@ -23,6 +23,7 @@ public class TimerActivity extends AppCompatActivity {
 
     int counter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +41,10 @@ public class TimerActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                counter=timerSB.getProgress() * 60;
-                timer = new CountDownTimer(Long.MAX_VALUE, 1000) {
+                    counter=timerSB.getProgress() * 60;
+                    startButton.setVisibility(View.INVISIBLE);
+                    timerSB.setVisibility(View.INVISIBLE);
+                    timer = new CountDownTimer(counter * 1000, 1000) {
                     @Override
                     public void onTick(long ms) {
                         counter -= 1;
@@ -57,6 +60,8 @@ public class TimerActivity extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         fTimer.setText("Done!");
+                        startButton.setVisibility(View.VISIBLE);
+                        timerSB.setVisibility(View.VISIBLE);
                     }
                 }.start ();
 
