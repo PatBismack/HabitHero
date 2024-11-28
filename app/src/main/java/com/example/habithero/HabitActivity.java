@@ -47,6 +47,7 @@ public class HabitActivity extends AppCompatActivity {
     ArrayList<String> habitFreq;
 
     String allQuery;
+    String updateCheck;
 //Layout Variables
 //ListView
     ListView habitList;
@@ -114,6 +115,17 @@ public class HabitActivity extends AppCompatActivity {
         habitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CheckBox chkBox = findViewById(R.id.list_checkbox);
+                if(chkBox.isChecked()){
+                    habitCompl.set(i, 1);
+                    updateCheck = "update habit set completed = '1' where habitId='" + habitId.get(i) + "'";
+                    modifyRecord(updateCheck);
+                }
+                else if(!chkBox.isChecked()){
+                    habitCompl.set(i, 0);
+                    updateCheck = "update habit set completed = '0' where habitId='" + habitId.get(i) + "'";
+                    modifyRecord(updateCheck);
+                }
                 habitDetails.putExtra("habitName", habitName.get(i));
                 habitDetails.putExtra("habitDesc", habitdesc.get(i));
                 habitDetails.putExtra("habitCompl", habitCompl.get(i));
@@ -176,6 +188,9 @@ public class HabitActivity extends AppCompatActivity {
         } catch (SQLException sqle) {
         }
         db = myDbHelper.getWritableDatabase();
+    }
+    public void modifyRecord(String q){
+        db.execSQL(q);
     }
 
     public void hideSoftKeyboard() {

@@ -81,6 +81,7 @@
                     android:background="@drawable/border"
                     android:gravity="top"
                     android:paddingStart="10dp"
+                    android:paddingRight="10dp"
                     android:paddingTop="10dp"
                     android:hint="ex. Go on a brisk 15 minute walk after lunch."
                     />
