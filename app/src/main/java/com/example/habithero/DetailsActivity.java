@@ -45,6 +45,8 @@ public class DetailsActivity extends AppCompatActivity {
     int completed;
     int id;
 
+    Intent habitEdit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,7 @@ public class DetailsActivity extends AppCompatActivity {
         editBtn = findViewById(R.id.editBtn);
 
         habitActivity = new Intent(this, HabitActivity.class);
+        habitEdit = new Intent(this, EditActivity.class);
         detailActivity = getIntent();
         name = detailActivity.getStringExtra("habitName");
         description = detailActivity.getStringExtra("habitDesc");
@@ -91,7 +94,18 @@ public class DetailsActivity extends AppCompatActivity {
                 DetailsActivity.this.startActivity(habitActivity);
             }
         });
-
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                habitEdit.putExtra("habitName", name);
+                habitEdit.putExtra("habitDesc", description);
+                habitEdit.putExtra("habitCompl", completed);
+                habitEdit.putExtra("habitId", id);
+                habitEdit.putExtra("habitType", type);
+                habitEdit.putExtra("habitFreq", frequency);
+                DetailsActivity.this.startActivity(habitEdit);
+            }
+        });
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +119,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
     }
+
     public void createDB() {
         myDbHelper = new DBHelper(this);
         try {

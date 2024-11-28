@@ -93,14 +93,8 @@ public class HabitActivity extends AppCompatActivity {
         hideSoftKeyboard();
         createDB();
 //Show data only for the current day
-        allQuery = "select * from habit where habitDate = '" + getCurrentDate() + "'";
-        getResult(allQuery);
-        allQuery = "select * from details where habitDate = '" + getCurrentDate() + "'";
-//        db.execSQL("ALTER TABLE details ADD COLUMN habitDate TEXT;");
-//        createDB();
-//        createDetailsDB();
-        getDetailResult(allQuery);
-
+        allQuery = "Select H.habitId, H.name, H.description, H.completed, H.habitDate, D.type, D.frequency from habit as H INNER join details as D on H.habitId = D.habitId where H.habitDate = '" + getCurrentDate() + "'";
+        getResults(allQuery);
 //Create new habit
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,8 +124,7 @@ public class HabitActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void getResult(String q) {
+    public void getResults(String q){
         Cursor result = db.rawQuery(q, null);
         result.moveToFirst();
         int count = result.getCount();
@@ -141,6 +134,8 @@ public class HabitActivity extends AppCompatActivity {
         habitdesc = new ArrayList<String>();
         habitCompl = new ArrayList<Integer>();
         habitId = new ArrayList<Integer>();
+        habitType = new ArrayList<String>();
+        habitFreq = new ArrayList<String>();
         if (count >= 1) {
             noResultsTV.setVisibility(View.GONE);
             habitList.setVisibility(View.VISIBLE);
@@ -155,28 +150,14 @@ public class HabitActivity extends AppCompatActivity {
 //                else{ habitdesc.add(result.getString(2));}
                 habitdesc.add(result.getString(2));
                 habitCompl.add(result.getInt(3));
+                habitType.add(result.getString(5));
+                habitFreq.add(result.getString(6));
             } while (result.moveToNext());
             ca = new CustomAdapter(this, habitName, habitdesc, habitCompl);
             habitList.setAdapter(ca);
         } else {
             habitList.setVisibility(View.GONE);
             noResultsTV.setVisibility(View.VISIBLE);
-        }
-        result.close();
-    }
-    public void getDetailResult(String q){
-        Cursor result = db.rawQuery(q, null);
-        result.moveToFirst();
-        int count = result.getCount();
-//        Log.i("count=", String.valueOf(count) + "XXX");
-        // ArrayLists for name, description, isChecked and id for each habit
-        habitType = new ArrayList<String>();
-        habitFreq = new ArrayList<String>();
-        if (count >= 1) {
-            do {
-                habitType.add(result.getString(1));
-                habitFreq.add(result.getString(2));
-            } while (result.moveToNext());
         }
         result.close();
     }
