@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,38 +13,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="#FBC3AB">
-            <ImageView
+            android:background="@color/backup">
+            <ImageButton
                 android:id="@+id/detailsBackBtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="?selectableItemBackgroundBorderless"
+                android:background="@drawable/back_icon"
+                android:backgroundTint="@color/fontPrimary"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/back_icon"
-                android:layout_centerVertical="true">
-            </ImageView>
+                android:layout_centerVertical="true"/>
             <TextView
                 android:id="@+id/habit_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="habit_title"
+                android:text=""
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:textSize="28sp">
-            </TextView>
-            <ImageView
+                android:textSize="28sp"/>
+            <ImageButton
                 android:id="@+id/habitTrashBtn"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="?selectableItemBackgroundBorderless"
+                android:background="@drawable/trash_icon"
+                android:backgroundTint="@color/fontPrimary"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/trash_icon"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="5dp">
-            </ImageView>
+                android:layout_marginEnd="5dp"/>
         </RelativeLayout>
         <FrameLayout
             android:layout_width="match_parent"
@@ -60,50 +56,107 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:text="Description"
+                    android:textColor="@color/fontPrimary"
                     android:textStyle="bold"
-                    android:textSize="24dp">
-                </TextView>
+                    android:textSize="24dp"/>
                 <TextView
+                    android:id="@+id/descTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="sample sample asdasdasdassample sample sample sample sample sample sample sample sample "
-                    android:textSize="22dp">
-                </TextView>
+                    android:text=""
+                    android:textColor="@color/fontPrimary"
+                    android:textSize="22dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:text="Type"
+                    android:textColor="@color/fontPrimary"
                     android:textStyle="bold"
-                    android:textSize="24dp">
-                </TextView>
+                    android:textSize="24dp"/>
                 <TextView
+                    android:id="@+id/typeTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="lorem"
-                    android:textSize="22dp">
-                </TextView>
+                    android:text=""
+                    android:textColor="@color/fontPrimary"
+                    android:textSize="22dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Frequency"
+                    android:textColor="@color/fontPrimary"
+                    android:textStyle="bold"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:id="@+id/freqTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@color/fontPrimary"
+                    android:textSize="22dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Completed"
+                    android:textColor="@color/fontPrimary"
+                    android:textStyle="bold"
+                    android:textSize="24dp"/>
+                <TextView
+                    android:id="@+id/complTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@color/fontPrimary"
+                    android:textSize="22dp"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="Date Completed"-->
+<!--                    android:textColor="@color/fontPrimary"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="24dp"/>-->
+<!--                <TextView-->
+<!--                    android:id="@+id/dateTxt"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text=""-->
+<!--                    android:textColor="@color/fontPrimary"-->
+<!--                    android:textSize="22dp"/>-->
             </LinearLayout>
-            <ImageView
+            <ImageButton
+                android:id="@+id/editBtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="?selectableItemBackgroundBorderless"
+                android:background="@drawable/edit_icon"
+                android:backgroundTint="@color/fontPrimary"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/edit_icon"
-                android:layout_gravity="end|bottom"
-                >
-            </ImageView>
+                android:layout_gravity="end|bottom"/>
         </FrameLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

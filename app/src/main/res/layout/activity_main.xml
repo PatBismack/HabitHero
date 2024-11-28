@@ -6,55 +6,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="#FFE8DE">
-
+        android:background="@color/backgroundPrimary">
         <ImageView
-            android:id="@+id/sun"
+            android:id="@+id/logoImg"
             android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:src="@drawable/sun"/>
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Habit Hero"
             android:textSize="90sp"
             android:textAlignment="center"
-            android:textColor="#FF7A41"/>
-
+            android:textColor="@color/fontSecondary"/>
         <Button
             android:id="@+id/trackBtn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF7A41"
+            android:backgroundTint="@color/fontSecondary"
             android:text="Track"
-            android:textSize="40sp" />
-
+            android:textSize="40sp"/>
         <Button
             android:id="@+id/historyBtn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF7A41"
+            android:backgroundTint="@color/fontSecondary"
             android:text="History"
-            android:textSize="40sp" />
-
+            android:textSize="40sp"/>
         <Button
             android:id="@+id/focusTimerBtn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF7A41"
+            android:backgroundTint="@color/fontSecondary"
             android:text="Focus Timer"
-            android:textSize="40sp" />
-
-
+            android:textSize="40sp"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
